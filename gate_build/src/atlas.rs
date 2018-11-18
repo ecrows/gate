@@ -1,4 +1,5 @@
 // Copyright 2017-2018 Matthew D. Michelotti
+// Modifications Copyright 2018-2019 Evan Crothers
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,7 +26,7 @@ use regex::Regex;
 use rect_packer::{Rect, Pack};
 use ::rerun_print;
 
-const MAX_DIM: u32 = 512;
+const MAX_DIM: u32 = 4096; // TODO: Originally 512px.  Might be a problem
 
 pub fn form_atlas(images_dir: &Path, out: &Path, pad: u32, check_rerun: bool) -> Vec<String> {
     assert!(out.extension() == None, "out must not have an extension, will use .png and .atlas extensions");
